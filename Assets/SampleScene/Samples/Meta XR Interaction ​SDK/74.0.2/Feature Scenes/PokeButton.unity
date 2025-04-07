@@ -2988,34 +2988,10 @@ MonoBehaviour:
       m_Calls: []
   _whenSelect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6609430561635564020}
-        m_TargetAssemblyTypeName: PokeButtonAction, Assembly-CSharp
-        m_MethodName: OnPokePressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenUnselect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6609430561635564020}
-        m_TargetAssemblyTypeName: PokeButtonAction, Assembly-CSharp
-        m_MethodName: OnPokeReleased
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenInteractorViewAdded:
     m_PersistentCalls:
       m_Calls: []
@@ -3028,18 +3004,6 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6609430561635564020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5919106134677382898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac476dd451a8e045aa33cdd8348eee4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8936241055968459070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3107,10 +3071,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7142164157179648364, guid: 05bbe913bf7c0954c8d6daed9ae5e426,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6609430561635564020}
     - targetCorrespondingSourceObject: {fileID: 7142164157179648364, guid: 05bbe913bf7c0954c8d6daed9ae5e426,
         type: 3}
       insertIndex: -1
