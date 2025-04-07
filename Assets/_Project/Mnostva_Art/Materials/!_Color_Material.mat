@@ -190,7 +190,7 @@ Material:
     - _Specular_Hide_On_Shadows: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _StrongRimStrength: 0.4
+    - _StrongRimStrength: 0
     - _Surface: 0
     - _ToonCutoffPoint: 0.11
     - _UVSec: 0
