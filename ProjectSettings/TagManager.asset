@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - QDSUITextSecondaryColor
+  - QDSUIToggleButton
+  - QDSUIBackplateGradient
+  - QDSUISharedThemeColor
+  - Floor
+  - Wall
+  - None
   layers:
   - Default
   - TransparentFX
