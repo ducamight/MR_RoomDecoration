@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+
     [SerializeField] private GameObject[] allPanels;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -15,13 +15,13 @@ public class UIManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
     }
-    public void TogglePanel(GameObject panelToShow)
+
+    public void TogglePanel(GameObject panel)
     {
-        foreach (GameObject panel in allPanels)
-        {
-            panel.SetActive(panel == panelToShow ? !panel.activeSelf : false);
-        }
+        if (panel == null) return;
+
+        bool isActive = panel.activeSelf;
+        panel.SetActive(!isActive);
     }
 }
