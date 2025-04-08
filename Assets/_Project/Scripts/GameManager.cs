@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Oculus.Interaction;
+using Oculus.Interaction.HandGrab;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("Level Items")]
     public GameObject[] levelItems;
     public int totalItemsSnapCorrectly;
+    [SerializeField] BoxCollider RoomCollider;
 
     [Space]
     [Header("Win FX")]
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         winParticlePrefab.transform.localScale = winParticlePrefabScale;
         AudioManager.Instance.Play("BackgroundMusic_1");
+        RoomCollider.enabled = false; 
     }
 
     public void SnapCorrect()
@@ -44,6 +48,18 @@ public class GameManager : MonoBehaviour
         totalItemsSnapCorrectly--;
     }
 
+    private void DisableGrab()
+    {
+        foreach (GameObject item in levelItems)
+        {
+            item.GetComponentInChildren<HandGrabInteractable>().enabled = false;
+        }
+    }
+
+    private void EnableRoomCollider()
+    {
+        RoomCollider.enabled = true;    
+    }
     public void WinGame()
     {
         if(totalItemsSnapCorrectly == levelItems.Length)
@@ -52,6 +68,8 @@ public class GameManager : MonoBehaviour
             // Add your win game logic here
             Instantiate(winParticlePrefab, centerRoomPoint.position, Quaternion.identity);
             AudioManager.Instance.Play("VictorySound");
+            DisableGrab();
+            EnableRoomCollider();
         }
     }
 

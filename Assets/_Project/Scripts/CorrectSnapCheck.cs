@@ -7,6 +7,8 @@ public class CorrectSnapCheck : MonoBehaviour
 {
     public SnapInteractable correctInteractable;
     private SnapInteractor snapInteractor;
+    [SerializeField] private Transform FXPoint;
+    public GameObject FXPrefab;
 
     private void Awake()
     {
@@ -27,6 +29,8 @@ public class CorrectSnapCheck : MonoBehaviour
 
             GameManager.Instance.SnapCorrect();
             GameManager.Instance.WinGame();
+            AudioManager.Instance.Play("SoftButton");
+            FXManager.Instance.PlayFX(FXPrefab, FXPoint.position, 2f);
         }
     }
 
