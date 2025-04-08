@@ -15,6 +15,7 @@ public class ItemLabelTrigger : MonoBehaviour
             return;
         }
         itemPrefab.SetActive(true);
+        AudioManager.Instance.Play("SpawnItem");
         //GameObject spawned = Instantiate(itemPrefab, spawnPoint.position, Quaternion.identity);
         Debug.Log($"✨ Spawned");
     }

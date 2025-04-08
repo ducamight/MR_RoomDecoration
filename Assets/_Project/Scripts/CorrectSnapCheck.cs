@@ -29,7 +29,7 @@ public class CorrectSnapCheck : MonoBehaviour
 
             GameManager.Instance.SnapCorrect();
             GameManager.Instance.WinGame();
-            AudioManager.Instance.Play("SoftButton");
+            AudioManager.Instance.Play("CorrectPlace");
             FXManager.Instance.PlayFX(FXPrefab, FXPoint.position, 2f);
         }
     }

@@ -5,14 +5,15 @@ using UnityEngine;
 public class SetSnapToParent : MonoBehaviour
 {
     public Transform decorGroupRoot;
+    public Transform decorGroup;
     public void OnSnapComplete()
     {
         transform.SetParent(decorGroupRoot);
         Debug.Log("Select");
     }
-    public void OnUnSnapComplete()
+    /*public void OnUnSnapComplete()
     {
-        transform.SetParent(null);
+        transform.SetParent(decorGroup);
         Debug.Log("UnSelect");
-    }
+    }*/
 }
