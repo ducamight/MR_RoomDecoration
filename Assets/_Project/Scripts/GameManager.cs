@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         winParticlePrefab.transform.localScale = winParticlePrefabScale;
+        AudioManager.Instance.Play("BackgroundMusic_1");
     }
 
     public void SnapCorrect()
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("You win the game!");
             // Add your win game logic here
             Instantiate(winParticlePrefab, centerRoomPoint.position, Quaternion.identity);
+            AudioManager.Instance.Play("VictorySound");
         }
     }
 

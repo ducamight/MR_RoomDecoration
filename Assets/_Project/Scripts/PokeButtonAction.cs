@@ -1,22 +1,69 @@
-﻿using Oculus.Interaction;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class PokeButtonAction : MonoBehaviour
 {
-    [Header("Prefab to spawn")]
-    public GameObject objectToSpawn;
-
-    [Header("Spawn position")]
-    public Transform spawnPoint;
-    public void SpawnObject()
+    public enum ActionType
     {
-        if (objectToSpawn != null && spawnPoint != null)
+        IncreaseMusicVolume,
+        DecreaseMusicVolume,
+        IncreaseSFXVolume,
+        DecreaseSFXVolume,
+        ToggleMusic,
+        NextMusic
+    }
+
+    [Header("Chọn hành động khi Poke")]
+    public ActionType actionType;
+
+    public void ExecuteAction()
+    {
+        if (AudioManager.Instance == null)
         {
-            Instantiate(objectToSpawn, spawnPoint.position, Quaternion.identity);
-            Debug.Log("✅ Đã spawn object: " + objectToSpawn.name);
+            Debug.LogWarning("❌ AudioManager chưa khởi tạo!");
+            return;
+        }
+
+        switch (actionType)
+        {
+            case ActionType.IncreaseMusicVolume:
+                AudioManager.Instance.IncreaseMusicVolume();
+                break;
+
+            case ActionType.DecreaseMusicVolume:
+                AudioManager.Instance.DecreaseMusicVolume();
+                break;
+
+            case ActionType.IncreaseSFXVolume:
+                AudioManager.Instance.IncreaseSFXVolume();
+                break;
+
+            case ActionType.DecreaseSFXVolume:
+                AudioManager.Instance.DecreaseSFXVolume();
+                break;
+
+            case ActionType.ToggleMusic:
+                ToggleMusicPlay();
+                break;
+
+            case ActionType.NextMusic:
+                //AudioManager.Instance.PlayNextMusic(); // Cần thêm trong AudioManager
+                break;
+        }
+    }
+
+    private void ToggleMusicPlay()
+    {
+        foreach (var s in AudioManager.Instance.sounds)
+        {
+            if (s.type == SoundType.Music)
+            {
+                if (s.source.isPlaying)
+                    s.source.Pause();
+                else
+                    s.source.Play();
+
+                break;
+            }
         }
     }
 }
