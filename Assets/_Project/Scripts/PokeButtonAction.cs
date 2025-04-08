@@ -8,8 +8,8 @@ public class PokeButtonAction : MonoBehaviour
         DecreaseMusicVolume,
         IncreaseSFXVolume,
         DecreaseSFXVolume,
-        ToggleMusic,
-        NextMusic
+        NextMusic,
+        PreviousMusic
     }
 
     [Header("Chọn hành động khi Poke")]
@@ -19,7 +19,7 @@ public class PokeButtonAction : MonoBehaviour
     {
         if (AudioManager.Instance == null)
         {
-            Debug.LogWarning("❌ AudioManager chưa khởi tạo!");
+            Debug.LogWarning("❌ AudioManager is not init!");
             return;
         }
 
@@ -41,29 +41,13 @@ public class PokeButtonAction : MonoBehaviour
                 AudioManager.Instance.DecreaseSFXVolume();
                 break;
 
-            case ActionType.ToggleMusic:
-                ToggleMusicPlay();
-                break;
-
             case ActionType.NextMusic:
-                //AudioManager.Instance.PlayNextMusic(); // Cần thêm trong AudioManager
+                AudioManager.Instance.PlayNextMusic(); 
                 break;
-        }
-    }
-
-    private void ToggleMusicPlay()
-    {
-        foreach (var s in AudioManager.Instance.sounds)
-        {
-            if (s.type == SoundType.Music)
-            {
-                if (s.source.isPlaying)
-                    s.source.Pause();
-                else
-                    s.source.Play();
-
+            case ActionType.PreviousMusic:
+                AudioManager.Instance.PlayPreviousMusic();
                 break;
-            }
+
         }
     }
 }

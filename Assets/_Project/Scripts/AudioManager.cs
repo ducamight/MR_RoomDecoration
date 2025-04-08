@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
     [Header("Volume")]
     [Range(0f, 1f)] public float musicVolume = 1f;
     [Range(0f, 1f)] public float sfxVolume = 1f;
-    public float volumeStep = 0.1f;
+    public float volumeStep = 0.3f;
 
     private void Awake()
     {
@@ -68,10 +68,21 @@ public class AudioManager : MonoBehaviour
         float vol = (s.type == SoundType.Music) ? musicVolume : sfxVolume;
 
         if (s.loop)
+        {
+            if (s.type == SoundType.Music)
+            {
+                StopAllMusic();
+                currentMusicSound = s;
+            }
+
             s.source.Play();
+        }
         else
+        {
             s.source.PlayOneShot(s.clip, vol);
+        }
     }
+
 
     public void Stop(string soundName)
     {
@@ -102,6 +113,65 @@ public class AudioManager : MonoBehaviour
         musicVolume = Mathf.Clamp01(v);
         ApplyVolumeByType(SoundType.Music, musicVolume);
     }
+
+    private int currentMusicIndex = 0;
+    private Sound currentMusicSound;
+    public void PlayNextMusic()
+    {
+        var musicList = GetMusicList();
+        if (musicList.Count == 0) return;
+
+        StopAllMusic();
+
+        currentMusicIndex = (currentMusicIndex + 1) % musicList.Count;
+        currentMusicSound = musicList[currentMusicIndex];
+        currentMusicSound.source.Play();
+
+        Debug.Log($"⏭ Bài tiếp: {currentMusicSound.name}");
+    }
+
+    public void PlayPreviousMusic()
+    {
+        var musicList = GetMusicList();
+        if (musicList.Count == 0) return;
+
+        StopAllMusic();
+
+        currentMusicIndex = (currentMusicIndex - 1 + musicList.Count) % musicList.Count;
+        currentMusicSound = musicList[currentMusicIndex];
+        currentMusicSound.source.Play();
+
+        Debug.Log($"⏮ Bài trước: {currentMusicSound.name}");
+    }
+    public List<Sound> GetMusicList()
+    {
+        List<Sound> musicList = new List<Sound>();
+
+        foreach (Sound s in sounds)
+        {
+            if (s.type == SoundType.Music)
+            {
+                musicList.Add(s);
+            }
+        }
+
+        return musicList;
+    }
+    private void StopAllMusic()
+    {
+        foreach (var s in sounds)
+        {
+            if (s.type == SoundType.Music)
+                s.source.Stop();
+        }
+    }
+
+    public Sound GetCurrentMusic()
+    {
+        return currentMusicSound;
+    }
+
+
 
     // ======= SFX =======
 
