@@ -14,7 +14,6 @@ public class UIManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     public void TogglePanel(GameObject panel)
