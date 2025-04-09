@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         winParticlePrefab.transform.localScale = winParticlePrefabScale;
-        //AudioManager.Instance.Play("BackgroundMusic_1");
+        AudioManager.Instance.Play("BackgroundMusic_1");
+        AudioManager.Instance.Stop("BackgroundMusic_1");
         RoomCollider.enabled = false; 
     }
 
