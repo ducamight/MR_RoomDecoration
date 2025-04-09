@@ -23,8 +23,8 @@ public class GrabItemFromUI : MonoBehaviour
         {
             renderer.enabled = true;
         }
-        //rb.useGravity = true;
-        //rb.isKinematic = false;
+        rb.isKinematic = false;
+        rb.useGravity = true;
         Destroy(itemUI, 0.5f);
     }
 }
