@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.09671705, g: 0.21786618, b: 0.3686118, a: 1}
+  m_IndirectSpecularColor: {r: 0.096604854, g: 0.21774918, b: 0.36833933, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9326,9 +9326,9 @@ GameObject:
   - component: {fileID: 434318479}
   - component: {fileID: 434318478}
   - component: {fileID: 434318477}
-  - component: {fileID: 434318476}
   - component: {fileID: 434318481}
   - component: {fileID: 434318482}
+  - component: {fileID: 434318483}
   m_Layer: 0
   m_Name: Room_1_Window_1 (1)
   m_TagString: Untagged
@@ -9336,28 +9336,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &434318476
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434318475}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7703699592107370251, guid: 49fec3a4d4a6fbb4996489f9dabd90d7, type: 3}
 --- !u!54 &434318477
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9535,6 +9513,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _sleepFrames: 0
+--- !u!65 &434318483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434318475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1045022, y: 1.892871, z: 1.1045045}
+  m_Center: {x: 0.00643407, y: -0.9464355, z: -0.0064330054}
 --- !u!1 &434939115
 GameObject:
   m_ObjectHideFlags: 0
@@ -13910,7 +13909,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.44715583, y: 0.58317137, z: 0.4471583}
+  m_Size: {x: 0.87, y: 0.9, z: 0.4471583}
   m_Center: {x: -0.020602757, y: -0.29158378, z: 0.020601794}
 --- !u!1 &607198874
 GameObject:
@@ -28103,9 +28102,9 @@ GameObject:
   - component: {fileID: 1195080270}
   - component: {fileID: 1195080269}
   - component: {fileID: 1195080268}
-  - component: {fileID: 1195080267}
   - component: {fileID: 1195080272}
   - component: {fileID: 1195080273}
+  - component: {fileID: 1195080274}
   m_Layer: 0
   m_Name: Room_1_Blinds_1 (1)
   m_TagString: Untagged
@@ -28113,28 +28112,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1195080267
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195080266}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2685204009168812025, guid: 49fec3a4d4a6fbb4996489f9dabd90d7, type: 3}
 --- !u!54 &1195080268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28311,6 +28288,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _sleepFrames: 0
+--- !u!65 &1195080274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195080266}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1967653, y: 1.8305078, z: 1.1967661}
+  m_Center: {x: -0.08194266, y: -0.9152539, z: 0.081944406}
 --- !u!1 &1198523701
 GameObject:
   m_ObjectHideFlags: 0
