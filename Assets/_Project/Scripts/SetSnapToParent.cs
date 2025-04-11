@@ -11,9 +11,5 @@ public class SetSnapToParent : MonoBehaviour
         transform.SetParent(decorGroupRoot);
         Debug.Log("Select");
     }
-    /*public void OnUnSnapComplete()
-    {
-        transform.SetParent(decorGroup);
-        Debug.Log("UnSelect");
-    }*/
+
 }

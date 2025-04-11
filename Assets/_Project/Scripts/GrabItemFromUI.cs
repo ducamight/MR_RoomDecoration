@@ -3,19 +3,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrabItemFromUI : MonoBehaviour
 {
     private MeshRenderer[] meshRenderers;
-    Rigidbody rb;
     public GameObject itemUI;
+
+    private Image itemUIImage;
+
 
     private void Start()
     {
         meshRenderers = GetComponentsInChildren<MeshRenderer>(true);
-        rb = GetComponentInChildren<Rigidbody>();
+        itemUIImage = itemUI.GetComponentInChildren<Image>();
+    }
 
-
+    public void OnHover()
+    {
+        Debug.Log("Hover");
+        itemUIImage.color = new Color(1, 1, 1, 0.5f);
+    }
+    public void OnUnhover()
+    {
+        itemUIImage.color = new Color(1, 1, 1, 1);
     }
     public void Ongrab()
     {
@@ -23,8 +34,6 @@ public class GrabItemFromUI : MonoBehaviour
         {
             renderer.enabled = true;
         }
-        rb.isKinematic = false;
-        rb.useGravity = true;
-        Destroy(itemUI, 0.5f);
+        itemUI.SetActive(false);
     }
 }
