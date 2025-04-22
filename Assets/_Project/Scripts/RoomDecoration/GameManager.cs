@@ -73,8 +73,11 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.Play("VictorySound");
             DisableGrab();
             EnableRoomCollider();
+
+
         }
     }
+
     public void RestartGame()
     {
         SceneManager.LoadScene(0);

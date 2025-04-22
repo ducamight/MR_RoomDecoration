@@ -11,6 +11,11 @@ TagManager:
   - Floor
   - Wall
   - None
+  - QDSUIIcon
+  - QDSUIToggleBorderlessButton
+  - QDSUIBorderlessButton
+  - QDSUITooltip
+  - Peg
   layers:
   - Default
   - TransparentFX

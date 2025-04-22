@@ -11,12 +11,16 @@ public class GrabItemFromUI : MonoBehaviour
     public GameObject itemUI;
 
     private Image itemUIImage;
-
-
+    private Rigidbody rb;
+    private MeshCollider meshCollider;  
+    private BoxCollider boxCollider;
     private void Start()
     {
         meshRenderers = GetComponentsInChildren<MeshRenderer>(true);
         itemUIImage = itemUI.GetComponentInChildren<Image>();
+        rb = GetComponentInChildren<Rigidbody>();
+        meshCollider = GetComponentInChildren<MeshCollider>();
+        boxCollider = GetComponentInChildren<BoxCollider>();
     }
 
     public void OnHover()
@@ -33,6 +37,10 @@ public class GrabItemFromUI : MonoBehaviour
         foreach (var renderer in meshRenderers)
         {
             renderer.enabled = true;
+            rb.isKinematic = false;
+            rb.useGravity = true;
+            meshCollider.enabled = true;
+            boxCollider.enabled = false;
         }
         itemUI.SetActive(false);
     }
