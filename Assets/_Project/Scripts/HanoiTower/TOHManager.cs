@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class TOHManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Peg targetPeg;
+    public int totalDisks;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        /*if (targetPeg.GetTopDiskIndex() == totalDisks - 1)
+            Debug.Log("You win!");*/
     }
 }

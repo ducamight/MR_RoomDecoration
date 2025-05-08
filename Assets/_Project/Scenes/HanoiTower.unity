@@ -643,8 +643,8 @@ GameObject:
   m_Component:
   - component: {fileID: 34346838}
   - component: {fileID: 34346841}
-  - component: {fileID: 34346840}
   - component: {fileID: 34346839}
+  - component: {fileID: 34346842}
   m_Layer: 0
   m_Name: SnapInteractable (2)
   m_TagString: Peg
@@ -689,7 +689,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 34346840}
+      - m_Target: {fileID: 34346842}
         m_TargetAssemblyTypeName: SnapPoint, Assembly-CSharp
         m_MethodName: OnDiskSnapped
         m_Mode: 1
@@ -716,21 +716,6 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &34346840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0896fd306ae841a4c88a38fd3ad60808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 2
-  parentPeg: {fileID: 79314748}
-  snapInteractable: {fileID: 34346841}
 --- !u!114 &34346841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,6 +735,21 @@ MonoBehaviour:
   _rigidbody: {fileID: 79314749}
   _snapPoseDelegate: {fileID: 0}
   _movementProvider: {fileID: 0}
+--- !u!114 &34346842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0896fd306ae841a4c88a38fd3ad60808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  parentPeg: {fileID: 79314748}
+  snapInteractable: {fileID: 34346841}
 --- !u!1 &39755210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,7 +2194,6 @@ GameObject:
   - component: {fileID: 128585253}
   - component: {fileID: 128585252}
   - component: {fileID: 128585255}
-  - component: {fileID: 128585256}
   m_Layer: 0
   m_Name: Disk
   m_TagString: Untagged
@@ -2319,21 +2318,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &128585256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128585250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6bbeb2ca852c5a47b1c4e1bd889b655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: 0
-  currentPeg: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &129201620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,6 +5723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 368613788}
   - component: {fileID: 368613789}
+  - component: {fileID: 368613790}
   m_Layer: 0
   m_Name: Disk2
   m_TagString: Untagged
@@ -5826,6 +5811,21 @@ MonoBehaviour:
   _whenPostprocessed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &368613790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368613787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bbeb2ca852c5a47b1c4e1bd889b655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 3
+  currentPeg: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &371338608
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,8 +6943,8 @@ GameObject:
   m_Component:
   - component: {fileID: 418543151}
   - component: {fileID: 418543152}
-  - component: {fileID: 418543154}
   - component: {fileID: 418543153}
+  - component: {fileID: 418543154}
   m_Layer: 0
   m_Name: SnapInteractable
   m_TagString: Peg
@@ -7022,19 +7022,7 @@ MonoBehaviour:
         m_CallState: 2
   _whenUnselect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 418543154}
-        m_TargetAssemblyTypeName: SnapPoint, Assembly-CSharp
-        m_MethodName: OnDiskUnSnapped
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenInteractorViewAdded:
     m_PersistentCalls:
       m_Calls: []
@@ -23996,7 +23984,6 @@ GameObject:
   - component: {fileID: 1415263044}
   - component: {fileID: 1415263043}
   - component: {fileID: 1415263046}
-  - component: {fileID: 1415263048}
   m_Layer: 0
   m_Name: Disk2
   m_TagString: Untagged
@@ -24121,21 +24108,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1415263048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415263041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6bbeb2ca852c5a47b1c4e1bd889b655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: 2
-  currentPeg: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1416336369
 GameObject:
   m_ObjectHideFlags: 0
@@ -26082,8 +26054,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1504403777}
-  - component: {fileID: 1504403779}
   - component: {fileID: 1504403778}
+  - component: {fileID: 1504403779}
   m_Layer: 0
   m_Name: Disk
   m_TagString: Untagged
@@ -26100,7 +26072,7 @@ Transform:
   m_GameObject: {fileID: 1504403776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.376, y: 0.9703081, z: 0.78}
+  m_LocalPosition: {x: 0.376, y: 0.9703081, z: 0.469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26135,9 +26107,9 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1504403779}
+      - m_Target: {fileID: 1504403776}
         m_TargetAssemblyTypeName: Disk, Assembly-CSharp
-        m_MethodName: OnSnapped
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26150,7 +26122,7 @@ MonoBehaviour:
   _whenUnselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1504403779}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Disk, Assembly-CSharp
         m_MethodName: OnUnSnapped
         m_Mode: 1
@@ -26183,7 +26155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bbeb2ca852c5a47b1c4e1bd889b655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0
+  size: 1
   currentPeg: {fileID: 0}
   originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1512444466
@@ -27788,8 +27760,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1631195500}
   - component: {fileID: 1631195501}
-  - component: {fileID: 1631195503}
   - component: {fileID: 1631195502}
+  - component: {fileID: 1631195503}
+  - component: {fileID: 1631195504}
   m_Layer: 0
   m_Name: SnapInteractable (2)
   m_TagString: Peg
@@ -27853,7 +27826,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1631195503}
+      - m_Target: {fileID: 1631195504}
         m_TargetAssemblyTypeName: SnapPoint, Assembly-CSharp
         m_MethodName: OnDiskSnapped
         m_Mode: 1
@@ -27881,6 +27854,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1631195503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631195499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74c38bf94aa52347906927d1cc5d981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peg: {fileID: 349845420}
+  index: 2
+  snap: {fileID: 0}
+--- !u!114 &1631195504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28814,8 +28802,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1662635374}
   - component: {fileID: 1662635375}
-  - component: {fileID: 1662635377}
   - component: {fileID: 1662635376}
+  - component: {fileID: 1662635377}
+  - component: {fileID: 1662635378}
   m_Layer: 0
   m_Name: SnapInteractable (1)
   m_TagString: Peg
@@ -28879,7 +28868,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1662635377}
+      - m_Target: {fileID: 1662635378}
         m_TargetAssemblyTypeName: SnapPoint, Assembly-CSharp
         m_MethodName: OnDiskSnapped
         m_Mode: 1
@@ -28907,6 +28896,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1662635377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662635373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74c38bf94aa52347906927d1cc5d981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peg: {fileID: 349845420}
+  index: 1
+  snap: {fileID: 0}
+--- !u!114 &1662635378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29791,6 +29795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1702949943}
   - component: {fileID: 1702949944}
+  - component: {fileID: 1702949945}
   m_Layer: 0
   m_Name: Disk1
   m_TagString: Untagged
@@ -29878,6 +29883,21 @@ MonoBehaviour:
   _whenPostprocessed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1702949945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702949942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bbeb2ca852c5a47b1c4e1bd889b655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 2
+  currentPeg: {fileID: 0}
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1704431761
 GameObject:
   m_ObjectHideFlags: 0
@@ -30254,7 +30274,6 @@ GameObject:
   - component: {fileID: 1732335382}
   - component: {fileID: 1732335381}
   - component: {fileID: 1732335384}
-  - component: {fileID: 1732335385}
   m_Layer: 0
   m_Name: Disk1
   m_TagString: Untagged
@@ -30379,21 +30398,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1732335385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732335379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6bbeb2ca852c5a47b1c4e1bd889b655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: 1
-  currentPeg: {fileID: 0}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1733297627
 GameObject:
   m_ObjectHideFlags: 0
@@ -31096,8 +31100,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1785946947}
   - component: {fileID: 1785946944}
-  - component: {fileID: 1785946946}
   - component: {fileID: 1785946945}
+  - component: {fileID: 1785946948}
   m_Layer: 0
   m_Name: SnapInteractable
   m_TagString: Peg
@@ -31146,7 +31150,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1785946946}
+      - m_Target: {fileID: 1785946948}
         m_TargetAssemblyTypeName: SnapPoint, Assembly-CSharp
         m_MethodName: OnDiskSnapped
         m_Mode: 1
@@ -31160,19 +31164,7 @@ MonoBehaviour:
         m_CallState: 2
   _whenUnselect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1785946946}
-        m_TargetAssemblyTypeName: SnapPoint, Assembly-CSharp
-        m_MethodName: OnDiskUnSnapped
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenInteractorViewAdded:
     m_PersistentCalls:
       m_Calls: []
@@ -31185,21 +31177,6 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1785946946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785946943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0896fd306ae841a4c88a38fd3ad60808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 0
-  parentPeg: {fileID: 79314748}
-  snapInteractable: {fileID: 1785946944}
 --- !u!4 &1785946947
 Transform:
   m_ObjectHideFlags: 0
@@ -31215,6 +31192,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 79314747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1785946948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785946943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0896fd306ae841a4c88a38fd3ad60808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  parentPeg: {fileID: 79314748}
+  snapInteractable: {fileID: 1785946944}
 --- !u!1 &1786273408
 GameObject:
   m_ObjectHideFlags: 0
@@ -35450,8 +35442,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2066206501}
   - component: {fileID: 2066206498}
-  - component: {fileID: 2066206500}
   - component: {fileID: 2066206499}
+  - component: {fileID: 2066206502}
   m_Layer: 0
   m_Name: SnapInteractable (1)
   m_TagString: Peg
@@ -35500,7 +35492,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2066206500}
+      - m_Target: {fileID: 2066206502}
         m_TargetAssemblyTypeName: SnapPoint, Assembly-CSharp
         m_MethodName: OnDiskSnapped
         m_Mode: 1
@@ -35527,21 +35519,6 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2066206500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066206497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0896fd306ae841a4c88a38fd3ad60808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 1
-  parentPeg: {fileID: 79314748}
-  snapInteractable: {fileID: 2066206498}
 --- !u!4 &2066206501
 Transform:
   m_ObjectHideFlags: 0
@@ -35557,6 +35534,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 79314747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2066206502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066206497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0896fd306ae841a4c88a38fd3ad60808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  parentPeg: {fileID: 79314748}
+  snapInteractable: {fileID: 2066206498}
 --- !u!1 &2068120326
 GameObject:
   m_ObjectHideFlags: 0

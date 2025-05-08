@@ -8,32 +8,29 @@ public class Disk : MonoBehaviour
 
     private void Start()
     {
+        // Lưu vị trí ban đầu để reset khi cần
         originalPosition = transform.position;
     }
 
-    public void OnInteract(Peg peg, int index)
+    // Gọi khi Disk đã snap thành công vào một SnapPoint
+    public void OnSnapped(Peg peg, int index)
     {
-        Debug.Log($"Disk {size} snapped to peg {peg.name} at index {index}");
+        Debug.Log($"[Snapped] Disk {size} → Peg {peg.name} @ index {index}");
         currentPeg = peg;
+        originalPosition = transform.position;
 
-        // Kiểm tra tính hợp lệ
-        var topDisk = peg.GetTopDisk();
-        if (topDisk != null && topDisk != this && size > topDisk.size)
-        {
-            Debug.Log("Invalid move: Disk {size} cannot be placed on Disk {topDisk.size}.");
-            // Sai luật → reset về vị trí cũ
-            Invoke(nameof(ResetPosition), 0.5f);
-        }
-        else
-        {
-            Debug.Log("Valid move: Disk {size} cannot be placed on Disk {topDisk.size}.");
-
-            // Đúng luật → bật snapPoint tiếp theo
-            peg.SetSnapPointActive(index + 1, true);
-            originalPosition = transform.position;
-        }
+        // Bật snapPoint tiếp theo để cho phép đặt đĩa tiếp
+        peg.SetSnapPointActive(index + 1, true);
     }
 
+    // Gọi khi Disk được un-snap (nhả ra)
+    public void OnRelease()
+    {
+        // Nếu cần, thêm logic xử lý khi release (ví dụ tắt hiệu ứng)
+        Debug.Log($"[Released] Disk {size} released from Peg {currentPeg?.name}");
+    }
+
+    // Đưa Disk về vị trí ban đầu
     public void ResetPosition()
     {
         transform.position = originalPosition;

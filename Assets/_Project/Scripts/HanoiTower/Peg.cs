@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Peg : MonoBehaviour
 {
-    public List<SnapInteractable> snapPoints; // Gắn thủ công từ dưới lên trên trong Editor
+    public List<SnapInteractable> snapPoints;
 
+    private void Start()
+    {
+        // Luôn cho phép snap vào vị trí 0
+        for (int i = 0; i < snapPoints.Count; i++)
+        {
+            snapPoints[i].MaxSelectingInteractors = (i == 0) ? 1 : 0;
+        }
+    }
     public void SetSnapPointActive(int index, bool isActive)
     {
         if (index >= 0 && index < snapPoints.Count)
@@ -20,7 +28,9 @@ public class Peg : MonoBehaviour
         {
             if (snapPoints[i].SelectingInteractors.Count > 0)
             {
-                Debug.Log("Index of top disk: " + i + " in peg " + gameObject.name + " is: " + snapPoints[i]);
+                Debug.Log($"Index of top disk: {i} in peg {gameObject.name}");
+                // Khi phát hiện đĩa trên snapPoint i, bật snapPoint i+1
+                SetSnapPointActive(i + 1, true);
                 return i;
             }
         }
